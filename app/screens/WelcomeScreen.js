@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View, Image, ImageBackground, Button } from 'react-native';
 
-export default function WelcomeScreen() {
+export default function WelcomeScreen({navigation}) {
+  const handlePress = () => {
+    navigation.navigate('Test')
+  }
 
 
   return (
@@ -13,7 +16,7 @@ export default function WelcomeScreen() {
           </View>
          
           <View style={styles.login}>
-            <Button title="Login" style={styles.text}  />
+            <Button title="Login" style={styles.text} onPress={handlePress} />
           </View>
           <View style={styles.signUp}>
             <Button title="Sign up" style={styles.text} />

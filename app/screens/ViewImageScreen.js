@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
 
 
-export function ViewImageScreen(props){
+export default function Test(props){
 
     return(
         <Image source={require("../assets/chair.jpg")} style={styles.BackgroundImage} />
