@@ -1,6 +1,9 @@
-import { StyleSheet, Text, View, Image, ImageBackground, Button } from "react-native";
+import { StyleSheet, Text, View, Image, ImageBackground, Button, Platform } from "react-native";
 
 export default function WelcomeScreen({ navigation }) {
+  const isIOS = Platform.OS === "ios";
+  const isAndroid = Platform.OS === 'android'
+  console.log(isIOS)
   const handlePress = () => {
     navigation.navigate("Test");
   };
@@ -11,10 +14,12 @@ export default function WelcomeScreen({ navigation }) {
         <Image source={require("../assets/logo-red.png")} style={styles.logo} />
         <Text style={styles.logoContainerText}>Sell What You Don't Need</Text>
       </View>
-
-      <View style={styles.login}>
-        <Button title="Login" style={styles.text} onPress={handlePress} />
-      </View>
+      {isIOS && (
+        <View style={styles.login}>
+          <Button title="Login" style={styles.text} onPress={handlePress} />
+        </View>
+      )}
+     
       <View style={styles.signUp}>
         <Button title="Sign up" style={styles.text} />
       </View>
